@@ -55,11 +55,33 @@ public class Cipher {
         //getting the users desired shift
         System.out.print("\tPlease enter the number you wish to shift your plaintext by (Caesar cipher is traditionally 3):\n\t");
         int shift = getInt();
+        scanner.nextLine();
 
         //getting the users plaintext
-        System.out.println("\tPlease enter the plaintext to be encrypted:\n\t");
+        System.out.print("\tPlease enter the plaintext to be encrypted:\n\t");
         String plaintext = scanner.nextLine();
-        System.out.println(plaintext);
+        System.out.println("\tYou entered: " + plaintext);
+
+        //putting plaintext into char array & adding ciphertext stringbuilder
+        char[] plaintextArray = plaintext.toCharArray();
+        StringBuilder ciphertext = new StringBuilder();
+
+        //encrypting the plaintext
+        for (int i = 0; i < plaintext.length(); i++) {
+            //making sure plaintextArray[i] is a char; if not setting as a space ' '
+            if (Character.isLetter(plaintextArray[i])) {
+                //using ASCII values to find new shift position in ASCII
+                int offset = ((plaintextArray[i] - 'a') + shift) % 26;
+
+                //converting ASCII value and adding new values to ciphertext
+                ciphertext.append((char) (offset + 'a'));
+            } else {
+                ciphertext.append(" ");
+            }
+        }
+
+        //printing the ciphertext to the user
+        System.out.println("\tCiphertext is: " + ciphertext);
 
     }
 
