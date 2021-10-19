@@ -40,7 +40,43 @@ public class Cipher {
     private static void decryptVigenere() {
     }
 
+    /**
+     * Asks the user what their ciphertext has been shifted by. Then gets the user to enter their ciphertext
+     * before printing the decrypted plaintext
+     */
     private static void decryptCaesar() {
+        System.out.println("\t----- Caesar Cipher Decryption Selected -----");
+        //asking the user what the shift was for the ciphertext
+        System.out.print("\tPlease enter the number your ciphertext was shifted by (Caesar cipher is traditionally 3):\n\t");
+        int shift = getInt();
+        scanner.nextLine();
+
+        //getting the ciphertext from the user before decryption
+        System.out.print("\tPlease enter the ciphertext to be decrypted:\n\t");
+        String ciphertext = scanner.nextLine();
+        System.out.println("\tYou entered: " + ciphertext);
+
+        //putting ciphertext into char array & adding a plaintext stringbuilder
+        char[] ciphertextArray = ciphertext.toCharArray();
+        StringBuilder plaintext = new StringBuilder();
+
+        //decrypting the ciphertext
+        for (int i = 0; i < ciphertext.length(); i++) {
+            //making sure plaintextArray[i] is a char; if not setting as a space ' '
+            if (Character.isLetter(ciphertextArray[i])) {
+                //using ASCII values to find new shift position in ASCII
+                int offset = ((ciphertextArray[i] - 'a') - shift) % 26;
+
+                //converting ASCII value and adding new values to ciphertext
+                plaintext.append((char) (offset + 'a'));
+            } else {
+                plaintext.append(" ");
+            }
+        }
+
+        //printing the ciphertext to the user
+        System.out.println("\tPlaintext is: " + plaintext);
+
     }
 
     private static void encryptVigenere() {
