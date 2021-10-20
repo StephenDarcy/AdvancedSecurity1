@@ -7,6 +7,7 @@ Description: Write a program that will implement Caesar Cipher and Vigenère Cip
 Java or any other programming language.
 */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -23,6 +24,7 @@ public class Cipher {
         while (menuOption != 5) {
             //getting menu option from user
             menuOption = menu();
+            scanner.nextLine();
             //switch based on users input
             switch (menuOption) {
                 case 1 -> encryptCaesar();
@@ -79,7 +81,52 @@ public class Cipher {
 
     }
 
+    /**
+     * Asks the user to input their desired plaintext and keyword. The keyword is converted to a key and the key
+     * is then used to encrypt the plaintext
+     * key and plaintext are both made uppercase.
+     */
     private static void encryptVigenere() {
+        System.out.println("\t----- Vigenere Cipher Encryption Selected -----");
+        //getting the users plaintext
+        System.out.print("\tPlease enter the plaintext to be encrypted:\n\t");
+        String plaintext = scanner.nextLine();
+        plaintext = plaintext.toUpperCase();
+        System.out.println("\tYou entered: " + plaintext);
+
+        //putting plaintext into char array
+        char[] plaintextArray = plaintext.toCharArray();
+
+        //getting the users keyword
+        System.out.print("\tPlease enter the keyword:\n\t");
+        String keyword = scanner.nextLine();
+        keyword = keyword.toUpperCase();
+        System.out.println("\tYou entered: " + keyword);
+
+        //creating a key array the length of plaintext
+        char[] key = new char[plaintext.length()];
+
+        //converting the keyword into a key (repeat keyword until key.length == plaintext.length)
+        int i, j;
+        for (i = 0, j = 0; i < plaintext.length(); i++, j++) {
+            //resetting j when it reaches the length of keyword
+            if (j == keyword.length()) {
+                j = 0;
+            }
+            //making the key
+            key[i] = keyword.charAt(j);
+        }
+
+        //encrypting the message with the key
+        char[] ciphertext = new char[plaintext.length()];
+        for (i = 0; i < plaintext.length(); i++) {
+            ciphertext[i] = (char) (((plaintextArray[i] + key[i]) % 26) + 'A');
+        }
+
+        //displaying the ciphertext
+        System.out.println("\tEncrypted text is: " + new String(ciphertext));
+
+
     }
 
     /**
