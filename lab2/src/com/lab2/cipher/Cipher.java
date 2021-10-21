@@ -8,6 +8,7 @@ Java or any other programming language.
 */
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -28,9 +29,9 @@ public class Cipher {
             //switch based on users input
             switch (menuOption) {
                 case 1 -> encryptCaesar();
-                case 2 -> encryptVigenere();
+                case 2 -> Vigenere(true);
                 case 3 -> decryptCaesar();
-                case 4 -> decryptVigenere();
+                case 4 -> Vigenere(false);
                 case 5 -> System.out.println("\tExiting...");
                 default -> System.out.println("\n\tError invalid input, returning to menu ...");
             }
@@ -39,8 +40,6 @@ public class Cipher {
 
     }
 
-    private static void decryptVigenere() {
-    }
 
     /**
      * Asks the user what their ciphertext has been shifted by. Then gets the user to enter their ciphertext
@@ -56,6 +55,7 @@ public class Cipher {
         //getting the ciphertext from the user before decryption
         System.out.print("\tPlease enter the ciphertext to be decrypted:\n\t");
         String ciphertext = scanner.nextLine();
+        ciphertext = ciphertext.toLowerCase();
         System.out.println("\tYou entered: " + ciphertext);
 
         //putting ciphertext into char array & adding a plaintext stringbuilder
@@ -64,6 +64,10 @@ public class Cipher {
 
         //decrypting the ciphertext
         for (int i = 0; i < ciphertext.length(); i++) {
+            char currentLetter = ciphertextArray[i];
+            if (currentLetter == ' ') {
+                continue;
+            }
             //making sure plaintextArray[i] is a char; if not setting as a space ' '
             if (Character.isLetter(ciphertextArray[i])) {
                 //using ASCII values to find new shift position in ASCII
@@ -75,27 +79,35 @@ public class Cipher {
                 plaintext.append(" ");
             }
         }
-
         //printing the ciphertext to the user
         System.out.println("\tPlaintext is: " + plaintext);
-
     }
 
+
     /**
-     * Asks the user to input their desired plaintext and keyword. The keyword is converted to a key and the key
-     * is then used to encrypt the plaintext
+     * Asks the user to input their desired text and keyword. The keyword is converted to a key and the key
+     * is then used to encrypt the plaintext. If the user chooses decryption the key is subtracted from the text instead
      * key and plaintext are both made uppercase.
      */
-    private static void encryptVigenere() {
-        System.out.println("\t----- Vigenere Cipher Encryption Selected -----");
-        //getting the users plaintext
-        System.out.print("\tPlease enter the plaintext to be encrypted:\n\t");
-        String plaintext = scanner.nextLine();
-        plaintext = plaintext.toUpperCase();
-        System.out.println("\tYou entered: " + plaintext);
+    private static void Vigenere(boolean option) {
+        String choice;
 
-        //putting plaintext into char array
-        char[] plaintextArray = plaintext.toCharArray();
+        if (option) {
+            choice = "Encrytion";
+
+        } else {
+            choice = "Decrption";
+        }
+
+        System.out.println("\t----- Vigenere Cipher " + choice + " Selected -----");
+        //getting the users text
+        System.out.print("\tPlease enter the text to begin " + choice + " :\n\t");
+        String text = scanner.nextLine();
+        text = text.toUpperCase();
+        System.out.println("\tYou entered: " + text);
+
+        //putting text into char array
+        char[] textArray = text.toCharArray();
 
         //getting the users keyword
         System.out.print("\tPlease enter the keyword:\n\t");
@@ -104,11 +116,11 @@ public class Cipher {
         System.out.println("\tYou entered: " + keyword);
 
         //creating a key array the length of plaintext
-        char[] key = new char[plaintext.length()];
+        char[] key = new char[text.length()];
 
-        //converting the keyword into a key (repeat keyword until key.length == plaintext.length)
+        //converting the keyword into a key (repeat keyword until key.length == text.length)
         int i, j;
-        for (i = 0, j = 0; i < plaintext.length(); i++, j++) {
+        for (i = 0, j = 0; i < text.length(); i++, j++) {
             //resetting j when it reaches the length of keyword
             if (j == keyword.length()) {
                 j = 0;
@@ -117,14 +129,23 @@ public class Cipher {
             key[i] = keyword.charAt(j);
         }
 
-        //encrypting the message with the key
-        char[] ciphertext = new char[plaintext.length()];
-        for (i = 0; i < plaintext.length(); i++) {
-            ciphertext[i] = (char) (((plaintextArray[i] + key[i]) % 26) + 'A');
+        //char array to hold the final text
+        char[] text1 = new char[text.length()];
+        if (option) {
+            //encrypting the message with the key
+            for (i = 0; i < text.length(); i++) {
+                text1[i] = (char) (((textArray[i] + key[i]) % 26) + 'A');
+            }
+        } else {
+            //decrypting the message with the key
+            for (i = 0; i < text.length(); i++) {
+                text1[i] = (char) ((((textArray[i] - key[i]) + 26) % 26) + 'A');
+            }
         }
 
-        //displaying the ciphertext
-        System.out.println("\tEncrypted text is: " + new String(ciphertext));
+
+        //displaying the text
+        System.out.println("\tText is: " + new String(text1));
 
 
     }
@@ -143,6 +164,7 @@ public class Cipher {
         //getting the users plaintext
         System.out.print("\tPlease enter the plaintext to be encrypted:\n\t");
         String plaintext = scanner.nextLine();
+        plaintext = plaintext.toUpperCase();
         System.out.println("\tYou entered: " + plaintext);
 
         //putting plaintext into char array & adding ciphertext stringbuilder
@@ -154,10 +176,10 @@ public class Cipher {
             //making sure plaintextArray[i] is a char; if not setting as a space ' '
             if (Character.isLetter(plaintextArray[i])) {
                 //using ASCII values to find new shift position in ASCII
-                int offset = ((plaintextArray[i] - 'a') + shift) % 26;
+                int offset = ((plaintextArray[i] - 'A') + shift) % 26;
 
                 //converting ASCII value and adding new values to ciphertext
-                ciphertext.append((char) (offset + 'a'));
+                ciphertext.append((char) (offset + 'A'));
             } else {
                 ciphertext.append(" ");
             }
