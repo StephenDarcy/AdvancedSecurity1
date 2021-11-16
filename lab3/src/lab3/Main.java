@@ -7,7 +7,6 @@ Description: Write a Java program (or any other programming language you are hap
 plaintext using a 2 * 2 Hill cipher.
 */
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
