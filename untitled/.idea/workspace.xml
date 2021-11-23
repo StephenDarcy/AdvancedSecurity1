@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ccdd41b8-55d7-445c-a1e0-4526df67ddba" name="Changes" comment="file changes">
+    <list default="true" id="e7820a75-fe8d-4b8c-979c-1ed268d0e75c" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/discord.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/runConfigurations.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3part2/src/lab3/Main.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3part2/src/lab3/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="20nVGRNY2zebIMhR1yaGFFs4REE" />
+  <component name="ProjectId" id="21IDKHTtF20SglUQ806TAzVdm6H" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -83,16 +83,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="format.on.save" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab2" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="actions.on.save" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="lab3.Main" />
-      <module name="lab3part2" />
+      <module name="untitled" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -101,47 +96,29 @@
       </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="lab3part2" />
+      <module name="untitled" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="lab3part2" />
+      <module name="untitled" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ccdd41b8-55d7-445c-a1e0-4526df67ddba" name="Changes" comment="" />
-      <created>1636680244367</created>
+      <changelist id="e7820a75-fe8d-4b8c-979c-1ed268d0e75c" name="Changes" comment="" />
+      <created>1637619643217</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1636680244367</updated>
-      <workItem from="1636680246110" duration="309000" />
-      <workItem from="1636756616782" duration="8531000" />
-      <workItem from="1636981726816" duration="4342000" />
-      <workItem from="1637154248050" duration="1000" />
-      <workItem from="1637585122184" duration="675000" />
-      <workItem from="1637619622468" duration="1437000" />
+      <updated>1637619643217</updated>
+      <workItem from="1637619644459" duration="690000" />
     </task>
-    <task id="LOCAL-00001" summary="file changes">
-      <created>1637087740602</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1637087740602</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,10 +134,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="file changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="file changes" />
   </component>
 </project>
