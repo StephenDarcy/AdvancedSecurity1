@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7820a75-fe8d-4b8c-979c-1ed268d0e75c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MillerRabin/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3/lab3part2/src/lab3/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
